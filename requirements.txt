@@ -3,12 +3,14 @@ mlflow
 notebook
 numpy
 scikit-learn
+ensure
+box
+python-box
 matplotlib
 python-box
 pyYAML
 tqdm
 ensure
 joblib
-pyYAML
 Flask
 Flask-Cors
