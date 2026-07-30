@@ -8,7 +8,7 @@ how we can specifically use classes
 
 1. Data ingestion  -> database(mysql/mongo DB) or API basically a ETL pipeline
 2. Data Validation -> schema should be validated 
-3. Data Transformation
+3. Data Transformation -> Feature engineering or data preprocessing
 4. Model Trainer
 5. Model Evalution
 
