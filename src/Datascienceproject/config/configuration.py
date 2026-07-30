@@ -1,5 +1,5 @@
 from src.Datascienceproject.constants import *
-from src.Datascienceproject.entity.config_entity import (DataIngestionConfig,DataValidationConfig,DataTransformationConfig)
+from src.Datascienceproject.entity.config_entity import (DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainerConfig)
 from src.Datascienceproject.utils.common import read_yaml,create_directories
 
 
@@ -9,7 +9,7 @@ class ConfigurationManager:
                  params_filepath = PARAMS_FILE_PATH,
                  schema_filepath = SCHEMA_FILE_PATH):
         self.config = read_yaml(config_filepath)
-        self.paramas = read_yaml(params_filepath)
+        self.params = read_yaml(params_filepath)
         self.schema = read_yaml(schema_filepath)
 
         create_directories([self.config.artifacts_root])
@@ -49,3 +49,22 @@ class ConfigurationManager:
                 data_path=config.data_path
             )
             return data_transformation_config
+
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+            config = self.config.model_trainer
+            params = self.params.ElasticNet
+            schema = self.schema.TARGET_COLUMNS
+    
+            create_directories([config.root_dir])
+    
+            Model_trainer_config = ModelTrainerConfig(
+                root_dir = config.root_dir,
+                test_data_path = config.test_data_path,
+                train_data_path = config.train_data_path,
+                model_name = config.model_name,
+                alpha = params.alpha,
+                l1_ratio = params.l1_ratio,
+                target_column = schema.name
+            )
+    
+            return Model_trainer_config

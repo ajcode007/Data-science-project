@@ -27,3 +27,20 @@ how we can specifically use classes
 
 
 
+in each stages we have modules
+
+confitguration
+components
+pipeline
+
+for the refective stages like ...
+
+idea is to write and  implement modular statruture 
+
+what is the use of particing this modular coding
+readability and incase of any changes like ...
+
+
+what is elastic net and paramter used 
+
+joblib
