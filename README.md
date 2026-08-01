@@ -56,3 +56,5 @@ joblib
 
 we should know what we do in each stage
 
+prediction pipeline and also cretaed a basic frontend UI
+

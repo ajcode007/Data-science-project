@@ -2,3 +2,10 @@
 .venv310/
 artifacts/
 logs/
+
+# MLflow
+.mlflow/
+mlruns/
+
+# python
+__pycache__/
